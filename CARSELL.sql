@@ -124,3 +124,6 @@ INSERT INTO facturadetalle VALUES ('0000000002', 'XYZ5678', 1, 9200.00);
 INSERT INTO facturadetalle VALUES ('0000000003', 'PQR8910', 1, 28500.00);
 
 SELECT * FROM facturadetalle;
+
+
+--Completo
