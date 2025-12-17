@@ -1,12 +1,12 @@
 CREATE DATABASE CARSELL;
 USE CARSELL;
 
-
+-- TABLA DE PROVEEDORES
 CREATE TABLE Proveedores (
     proveedorID CHAR(10) PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     contacto VARCHAR(100),
-    telefono CHAR(10),
+    telefono CHAR(15),
     email VARCHAR(100) UNIQUE
 );
 
@@ -17,6 +17,8 @@ INSERT INTO Proveedores VALUES
 ('PROV004','Kia Motors EC','Fernando Ruiz','0967788991','kia@gmail.com'),
 ('PROV005','Nissan Ecuador','María Torres','0956677889','nissan@gmail.com');
 
+
+-- TABLA DE VEHICULOS
 
 CREATE TABLE Vehiculos (
     vehiculoID CHAR(7) PRIMARY KEY, -- Placa
@@ -34,45 +36,57 @@ CREATE TABLE Vehiculos (
 );
 
 INSERT INTO Vehiculos VALUES
-('ABC1234','Toyota','Corolla',2020,'Sedán',16500,'Excelente','Disponible','2024-03-10','Vehículo en perfecto estado','PROV001'),
-('XYZ5678','Chevrolet','Spark',2018,'Hatchback',9200,'Bueno','Reservado','2024-02-15','Eficiente y económico','PROV002'),
-('PQR8910','Hyundai','Tucson',2022,'SUV',28500,'Nuevo','Disponible','2024-05-01','Último modelo, pocas unidades','PROV003'),
-('DEF4567','Kia','Rio',2019,'Sedán',11000,'Muy bueno','Vendido','2024-01-20','Recién afinado','PROV001');
+('NOP4567','Ford','Fiesta',2019,'Hatchback',9500,'Bueno','Disponible','2024-03-05','Eficiente y económico','PROV002'),
+('QRS5678','Chevrolet','Trailblazer',2022,'SUV',35000,'Excelente','Disponible','2024-04-10','SUV de lujo','PROV002'),
+('TUV6789','Hyundai','Elantra',2020,'Sedán',16000,'Muy bueno','Disponible','2024-02-20','Sedán cómodo y seguro','PROV003'),
+('WXY7890','Kia','Soul',2021,'Hatchback',18000,'Muy bueno','Disponible','2024-03-25','Vehículo moderno','PROV004'),
+('ZAB8901','Nissan','Versa',2022,'Sedán',14000,'Excelente','Disponible','2024-05-15','Vehículo económico','PROV005'),
+('BCD9012','Toyota','Camry',2023,'Sedán',28000,'Nuevo','Disponible','2024-06-01','Último modelo','PROV001'),
+('EFG0123','Honda','Civic',2021,'Sedán',22000,'Muy bueno','Disponible','2024-04-30','Sedán confiable','PROV003'),
+('HIJ1234','Ford','Escape',2022,'SUV',32000,'Excelente','Disponible','2024-05-10','SUV familiar','PROV002'),
+('KLM2345','Chevrolet','Malibu',2020,'Sedán',20000,'Muy bueno','Disponible','2024-03-18','Vehículo cómodo','PROV002'),
+('NOP3456','Hyundai','Santa Fe',2023,'SUV',38000,'Nuevo','Disponible','2024-06-20','SUV premium','PROV003');
 
-
+-- TABLA DE CLIENTES
 
 CREATE TABLE Clientes (
     clienteID CHAR(10) PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
-    apellido VARCHAR(100) NOT NULL,
-    telefono CHAR(10),
+    telefono CHAR(15),
     email VARCHAR(100) UNIQUE,
     direccion VARCHAR(150)
 );
 
 INSERT INTO Clientes VALUES
-('1716410210','Alisson','Chiguano','0987654321','alisson@gmail.com','Quito, Ecuador'),
-('1710982348','Roger','Tallana','0991234567','roger@gmail.com','Latacunga, Ecuador'),
-('1716938210','Erick','Analuisa','0981122334','erick@gmail.com','Ambato, Ecuador'),
-('1755582348','Antonio','Valencia','0979988776','antonio@gmail.com','Ibarra, Ecuador');
+('1714455667','Camila Vega','0981234567','camila@gmail.com','Quito, Ecuador'),
+('1715566778','Luis Cordero','0992345678','luis@gmail.com','Guayaquil, Ecuador'),
+('1716677889','Mariana Salazar','0973456789','mariana@gmail.com','Cuenca, Ecuador'),
+('1717788990','Andrés Paredes','0984567890','andres@gmail.com','Ambato, Ecuador'),
+('1718899001','Isabel Suárez','0995678901','isabel@gmail.com','Manta, Ecuador'),
+('1719900112','Fernando Castillo','0976789012','fernando@gmail.com','Loja, Ecuador'),
+('1720011223','Natalia Vargas','0987890123','natalia@gmail.com','Portoviejo, Ecuador'),
+('1721122334','Jorge Mora','0998901234','jorge@gmail.com','Machala, Ecuador'),
+('1722233445','Paola Rojas','0979012345','paola@gmail.com','Riobamba, Ecuador'),
+('1723344556','Ricardo Luna','0980123456','ricardo@gmail.com','Esmeraldas, Ecuador');
 
-
+--TABLA DE EMPLEADOS
 
 CREATE TABLE Empleados (
     empleadoID CHAR(10) PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
-    apellido VARCHAR(100) NOT NULL,
-    telefono CHAR(10),
+    telefono CHAR(15),
     email VARCHAR(100) UNIQUE,
     puesto VARCHAR(50) DEFAULT 'Vendedor'
 );
 
 INSERT INTO Empleados VALUES
-('EMP001','Carlos','Mendoza','0981112233','carlos.mendoza@empresa.com','Vendedor'),
-('EMP002','María','López','0993322110','maria.lopez@empresa.com','Administradora'),
-('EMP003','Javier','Suarez','0975544332','javier.suarez@empresa.com','Técnico'),
-('EMP004','Fernanda','Pérez','0987766554','fernanda.perez@empresa.com','Vendedora');
+('EMP001','Carlos Mendoza','0981112233','carlos.mendoza@empresa.com','Vendedor'),
+('EMP002','María López','0993322110','maria.lopez@empresa.com','Administradora'),
+('EMP003','Javier Suarez','0975544332','javier.suarez@empresa.com','Técnico'),
+('EMP004','Fernanda Pérez','0987766554','fernanda.perez@empresa.com','Vendedora');
 
+
+-- TABLA DE CLIENTESFRECUENTES
 
 CREATE TABLE ClientesFrecuentes (
     clienteID CHAR(10),
@@ -91,6 +105,8 @@ INSERT INTO ClientesFrecuentes VALUES
 ('1716938210','PQR8910',0.20,'VIP','ANU');
 
 
+--TABLA DE FACTURAS
+
 CREATE TABLE facturas (
     facturanumero CHAR(10) PRIMARY KEY,
     fechafactura DATE,
@@ -107,6 +123,8 @@ INSERT INTO facturas VALUES ('0000000003', '2024-12-12', '1755582348', 'EMP003',
 
 SELECT * FROM facturas;
 
+
+-- TABLA DE FACTURADETALLES
 
 CREATE TABLE facturadetalle (
     facturanumero CHAR(10),
@@ -126,4 +144,4 @@ INSERT INTO facturadetalle VALUES ('0000000003', 'PQR8910', 1, 28500.00);
 SELECT * FROM facturadetalle;
 
 
---Completo
+--Completo:)
