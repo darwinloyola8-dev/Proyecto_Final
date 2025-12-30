@@ -1,4 +1,7 @@
+
+
 CREATE DATABASE CARSELL;
+
 USE CARSELL;
 -- TABLA PROVEEDORES
 
@@ -18,12 +21,12 @@ INSERT INTO Proveedores VALUES
 ('PROV005','Nissan Ecuador','María Torres','0956677889','nissan@gmail.com');
 
 -- TABLA VEHICULOS
-
+USE CARSELL;
 CREATE TABLE Vehiculos (
     vehiculoID CHAR(7) PRIMARY KEY,
     marca VARCHAR(50),
     modelo VARCHAR(50),
-    año INT,
+    anio INT,
     tipo VARCHAR(30),
     precio DECIMAL(10,2),
     estadoMecanico VARCHAR(100),
@@ -41,7 +44,7 @@ INSERT INTO Vehiculos VALUES
 ('AAA1111','Mazda','CX-5',2022,'SUV',29000,'Excelente','Disponible','2024-07-01','SUV elegante','PROV001'),
 ('BBB2222','Toyota','Corolla',2021,'Sedán',19500,'Muy bueno','Disponible','2024-07-02','Confiable','PROV001'),
 ('CCC3333','Nissan','Sentra',2020,'Sedán',17000.00,'Bueno','Disponible','2024-01-15','Económico y confiable','PROV004'),
-('DDD4444','Honda','Civic',2021,'Sedán',21000.00,'Muy bueno','Disponible','2024-01-20','Popular y eficiente','PROV002'),
+('DDD4444','Honda','Civic',2021,'Sedán',21000.00,'Muy bueno','No Disponible','2024-01-20','Popular y eficiente','PROV002'),
 ('EEE5555','Kia','Sportage',2022,'SUV',27000.00,'Excelente','Disponible','2024-02-02','SUV versátil','PROV003'),
 ('FFF6666','Volkswagen','Tiguan',2021,'SUV',26500.00,'Muy bueno','Disponible','2024-02-10','Amplio y cómodo','PROV001'),
 ('GGG7777','Renault','Duster',2019,'SUV',14000.00,'Bueno','Disponible','2024-02-18','Robusto','PROV005'),
@@ -53,7 +56,7 @@ INSERT INTO Vehiculos VALUES
 ('MMM0004','Mazda','Mazda3',2020,'Sedán',18000.00,'Muy bueno','Disponible','2024-03-20','Deportivo','PROV005'),
 ('NNN0005','Toyota','RAV4',2022,'SUV',33000.00,'Excelente','Disponible','2024-03-25','Híbrido opcional','PROV002'),
 ('OOO0006','Honda','HR-V',2021,'SUV',24000.00,'Muy bueno','Disponible','2024-03-28','Compacto urbano','PROV003'),
-('PPP0007','Nissan','Kicks',2020,'SUV',16500.00,'Bueno','Disponible','2024-04-03','Eficiente','PROV001'),
+('PPP0007','Nissan','Kicks',2020,'SUV',16500.00,'Bueno','No Disponible','2024-04-03','Eficiente','PROV001'),
 ('QQQ0008','Volkswagen','Gol',2019,'Hatchback',9000.00,'Bueno','Disponible','2024-04-07','Accesible','PROV004'),
 ('RRR0009','Renault','Logan',2018,'Sedán',8500.00,'Bueno','Disponible','2024-04-12','Espacioso','PROV005'),
 ('SSS0010','Kia','Rio',2021,'Sedán',14500.00,'Muy bueno','Disponible','2024-04-16','Eficiencia y estilo','PROV003'),
@@ -88,11 +91,11 @@ INSERT INTO Vehiculos VALUES
 ('VWX0039','Nissan','X-Trail',2020,'SUV',23000.00,'Muy bueno','Disponible','2024-08-12','Familiar','PROV005'),
 ('WXY0040','Kia','Cerato',2021,'Sedán',17500.00,'Muy bueno','Disponible','2024-08-16','Balance precio/valor','PROV003'),
 ('XYZ0041','Volkswagen','Polo',2022,'Hatchback',17000.00,'Excelente','Disponible','2024-08-20','Moderno y seguro','PROV002'),
-('YZA0042','Renault','Sandero',2020,'Hatchback',11000.00,'Bueno','Disponible','2024-08-24','Amplio para su clase','PROV001');
+('YZA0042','Renault','Sandero',2020,'Hatchback',11000.00,'Bueno','No Disponible','2024-08-24','Amplio para su clase','PROV001');
 
 
 -- TABLA CLIENTES
-
+USE CARSELL;
 CREATE TABLE Clientes (
     clienteID CHAR(10) PRIMARY KEY,
     nombre VARCHAR(100),
@@ -155,7 +158,7 @@ INSERT INTO Clientes VALUES
 
 
 -- TABLA CLIENTES FRECUENTES
-
+USE CARSELL;
 CREATE TABLE ClientesFrecuentes (
     clienteID CHAR(10),
     vehiculoID CHAR(7),
@@ -186,7 +189,7 @@ INSERT INTO ClientesFrecuentes VALUES
 
 
 -- TABLA FACTURAS
-
+USE CARSELL;
 CREATE TABLE facturas (
     facturanumero CHAR(10) PRIMARY KEY,
     fechafactura DATE,
@@ -201,7 +204,7 @@ INSERT INTO facturas VALUES
 
 
 -- TABLA FACTURA DETALLE
-
+USE CARSELL;
 CREATE TABLE facturadetalle (
     facturanumero CHAR(10),
     vehiculoID CHAR(7),
@@ -217,6 +220,4 @@ INSERT INTO facturadetalle VALUES
 ('FAC0000001','NOP4567',1,9500.00),
 ('FAC0000002','AAA1111',1,29000.00),
 ('FAC0000003','BBB2222',1,19500.00);
-
-SELECT * FROM facturadetalle;
 
