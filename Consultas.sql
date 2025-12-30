@@ -271,3 +271,4 @@ WHERE EXISTS (
     FROM facturas f
     WHERE f.clienteID = c.clienteID
 );
+

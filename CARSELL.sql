@@ -219,3 +219,4 @@ INSERT INTO facturadetalle VALUES
 ('FAC0000003','BBB2222',1,19500.00);
 
 SELECT * FROM facturadetalle;
+
